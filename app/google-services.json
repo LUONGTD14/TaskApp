@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "49274115837",
+    "firebase_url": "https://taskapp-e5684-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "taskapp-e5684",
+    "storage_bucket": "taskapp-e5684.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49274115837:android:752fbef7a12e48c1e49094",
+        "android_client_info": {
+          "package_name": "com.example.taskapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbExQx0VZ6Sy9v5_bBivbimuRZbjVTe3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
