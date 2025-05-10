@@ -1,5 +1,7 @@
 package com.example.taskapp.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,21 +12,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskapp.R;
+import com.example.taskapp.ViewTaskActivity;
 import com.example.taskapp.enums.TaskStatus;
 import com.example.taskapp.model.Member;
 import com.example.taskapp.model.Task;
+import com.google.gson.Gson;
 
 import java.util.List;
 import java.util.Map;
 
 public class DoneOverdueTaskAdapter extends RecyclerView.Adapter<DoneOverdueTaskAdapter.TaskViewHolder> {
-
+    private Context context;
     private List<Task> taskList;
     private Map<String, Member> memberMap;
 
-    public DoneOverdueTaskAdapter(List<Task> taskList, Map<String, Member> memberMap) {
+    public DoneOverdueTaskAdapter(List<Task> taskList, Map<String, Member> memberMap, Context context) {
         this.taskList = taskList;
         this.memberMap = memberMap;
+        this.context = context;
     }
 
     @NonNull
@@ -40,7 +45,7 @@ public class DoneOverdueTaskAdapter extends RecyclerView.Adapter<DoneOverdueTask
         Task task = taskList.get(position);
 
         holder.textStatus.setText("Status: " + task.getStatus().name());
-        holder.textStartEndTime.setText("Start time: " + task.getStartTime() + " \n Done time: " + task.getDoneTime());
+        holder.textStartEndTime.setText("Start time: " + task.getStartTime() + " \nDone time: " + task.getDoneTime());
         holder.textTaskName.setText(task.getName());
 
         String managerName = memberMap.containsKey(task.getManagerId()) ? memberMap.get(task.getManagerId()).getName() : "unknown";
@@ -54,6 +59,12 @@ public class DoneOverdueTaskAdapter extends RecyclerView.Adapter<DoneOverdueTask
         } else if (task.getStatus() == TaskStatus.OVERDUE) {
             holder.itemView.setBackgroundColor(Color.parseColor("#ea8b8b"));
         }
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ViewTaskActivity.class);
+            intent.putExtra("taskToView", new Gson().toJson(taskList.get(position)));
+            context.startActivity(intent);
+        });
+
     }
 
     @Override

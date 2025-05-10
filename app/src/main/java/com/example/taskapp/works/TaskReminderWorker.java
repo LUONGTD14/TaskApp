@@ -102,7 +102,7 @@ public class TaskReminderWorker extends Worker {
                     String content = "remind " + days + " days " + hours + " h\nManager: " + assignee;
 
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), "TASK_CHANNEL")
-                            .setSmallIcon(R.drawable.ic_person_add)
+                            .setSmallIcon(R.drawable.ic_add_task)
                             .setContentTitle("Remind: " + task.getName())
                             .setContentText(content)
                             .setStyle(new NotificationCompat.BigTextStyle().bigText(content))

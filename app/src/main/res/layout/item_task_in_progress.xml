@@ -54,20 +54,20 @@
             android:id="@+id/btn_change_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đổi trạng thái" />
+            android:text="Status" />
 
         <Button
             android:id="@+id/btn_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sửa"
+            android:text="Edit"
             android:layout_marginStart="8dp" />
 
         <Button
             android:id="@+id/btn_extend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gia hạn"
+            android:text="Extend"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 

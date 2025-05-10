@@ -46,12 +46,14 @@ public class InProgressTaskFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_in_progress);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new TaskInProgressAdapter(taskList, memberMap);
+        adapter = new TaskInProgressAdapter(taskList, memberMap, getContext());
         recyclerView.setAdapter(adapter);
 
         swipeRefreshLayout.setOnRefreshListener(this::reloadData);
 
         reloadData();
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener());
     }
 
     private void reloadData() {

@@ -50,7 +50,7 @@ public class DoneOverdueTaskFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerDoneOverdue);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new DoneOverdueTaskAdapter(taskList, memberMap);
+        adapter = new DoneOverdueTaskAdapter(taskList, memberMap, getContext());
         recyclerView.setAdapter(adapter);
 
         loadMembersAndTasks();
@@ -84,7 +84,8 @@ public class DoneOverdueTaskFragment extends Fragment {
                 taskList.clear();
                 for (DataSnapshot child : snapshot.getChildren()) {
                     Task task = child.getValue(Task.class);
-                    if (task.getStatus() == TaskStatus.DONE || task.getStatus() == TaskStatus.OVERDUE) {
+                    if (task.getStatus() == TaskStatus.DONE || task.getStatus() == TaskStatus.OVERDUE
+                            || task.getStatus() == TaskStatus.IGNORE) {
                         taskList.add(task);
                     }
                 }

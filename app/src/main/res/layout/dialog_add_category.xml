@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/editCategoryName"
-        android:hint="Tên danh mục"
+        android:hint="Category name"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -16,7 +16,7 @@
         android:id="@+id/editCategoryDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mô tả"
+        android:hint="Description"
         android:minLines="2"
         android:inputType="textMultiLine"
         android:gravity="top"

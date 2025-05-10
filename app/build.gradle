@@ -30,6 +30,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+    packagingOptions {
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+    }
 }
 
 dependencies {
@@ -49,5 +53,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     // Worker
     implementation "androidx.work:work-runtime:2.9.0"
+    // Gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+    // Mail
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.sun.mail:android-activation:1.6.7'
 
 }
