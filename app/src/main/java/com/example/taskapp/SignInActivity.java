@@ -1,6 +1,7 @@
 package com.example.taskapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -37,6 +38,7 @@ import javax.mail.internet.MimeMessage;
 
 public class SignInActivity extends AppCompatActivity {
     private ActivitySinginBinding binding;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class SignInActivity extends AppCompatActivity {
 
         binding = ActivitySinginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        sharedPreferences = getSharedPreferences("TASK_APP_USER_ID", MODE_PRIVATE);
 
         binding.btnLogin.setOnClickListener(v -> {
             String knoxid = binding.editKnoxId.getText().toString().trim();
@@ -73,14 +77,14 @@ public class SignInActivity extends AppCompatActivity {
         EditText edtEmail = dialogView.findViewById(R.id.edtEmail);
 
         builder.setView(dialogView);
-        builder.setPositiveButton("Xác nhận", (dialog, which) -> {
+        builder.setPositiveButton("Confirm", (dialog, which) -> {
             String knoxId = edtKnoxId.getText().toString().trim();
             String email = edtEmail.getText().toString().trim();
 
             verifyKnoxIdAndEmail(knoxId, email);
         });
 
-        builder.setNegativeButton("Hủy", null);
+        builder.setNegativeButton("Cancel", null);
         builder.show();
     }
 
@@ -200,8 +204,13 @@ public class SignInActivity extends AppCompatActivity {
                                     if (member.isFirstLogin()) {
                                         promptChangePassword(userSnapshot.getKey(), member);
                                     } else {
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("MemberId", member.getId());
+                                        editor.apply();
+
                                         binding.editKnoxId.setText("");
                                         binding.editPassword.setText("");
+
                                         Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(SignInActivity.this, MainActivity.class));
                                     }

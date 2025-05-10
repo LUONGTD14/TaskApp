@@ -2,6 +2,7 @@ package com.example.taskapp.works;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -32,10 +33,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TaskReminderWorker extends ListenableWorker {
     private final Context context;
+    private SharedPreferences sharedPreferences;
+    private String memberId;
 
     public TaskReminderWorker(@NonNull Context context, @NonNull WorkerParameters params) {
         super(context, params);
         this.context = context;
+        sharedPreferences = context.getSharedPreferences("TASK_APP_USER_ID", Context.MODE_PRIVATE);
+        memberId = sharedPreferences.getString("MemberId", null);
     }
 
     @NonNull
@@ -59,14 +64,17 @@ public class TaskReminderWorker extends ListenableWorker {
 
                 for (DataSnapshot child : snapshot.getChildren()) {
                     Task task = child.getValue(Task.class);
-                    if (task == null || task.getStatus() == TaskStatus.DONE || task.getStatus() == TaskStatus.OVERDUE)
+                    if (task == null || task.getStatus() == TaskStatus.DONE
+                            || task.getStatus() == TaskStatus.OVERDUE)
                         continue;
 
                     try {
                         Date reminderDate = sdf.parse(task.getReminderTime());
                         Date endDate = sdf.parse(task.getEndTime());
 
-                        if (reminderDate != null && now.after(reminderDate) && task.getNumOfReminder() > 0) {
+                        if (reminderDate != null && now.after(reminderDate) && task.getNumOfReminder() > 0
+                                && (task.getManagerId().equals(memberId) || task.getMember1Id().equals(memberId)
+                                || task.getMember2Id().equals(memberId))) {
                             tasksToNotify.add(task);
                             task.setNumOfReminder(task.getNumOfReminder() - 1);
                             taskRef.child(task.getId()).setValue(task);
