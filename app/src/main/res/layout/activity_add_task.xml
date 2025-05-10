@@ -57,15 +57,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal"
             android:layout_marginTop="14dp"
+            android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
                 android:layout_marginTop="8dp"
+                android:layout_weight="4"
                 android:text="Manager" />
 
             <Spinner
@@ -85,8 +85,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
                 android:layout_marginTop="8dp"
+                android:layout_weight="4"
                 android:text="Member 1" />
 
             <Spinner
@@ -106,8 +106,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
                 android:layout_marginTop="8dp"
+                android:layout_weight="4"
                 android:text="Member 2" />
 
             <Spinner

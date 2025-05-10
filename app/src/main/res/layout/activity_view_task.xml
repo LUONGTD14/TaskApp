@@ -9,194 +9,194 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/LabelHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            style="@style/LabelHeader"
             android:text="Task content view" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Task name:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtName"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Requirement:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtRequirement"
             style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:maxLines="10" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Category:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtCategory"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Manager:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtManager"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Member 1:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtMember1"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Member 2:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtMember2"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Start time:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtStartTime"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="End time:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtEndTime"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Reminder time:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtReminderTime"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Done time" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtDoneTime"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Created time:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtCreateTime"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Task status:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtStatus"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Num of reminder:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtNumReminder"
-            style="@style/Value" />
+            style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Label"
             android:text="Extend reason:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtExtendReason"
             style="@style/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:maxLines="10" />
 
     </LinearLayout>

@@ -2,25 +2,19 @@ package com.example.taskapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.taskapp.databinding.ActivityAddTaskBinding;
-import com.example.taskapp.model.Member;
-import com.example.taskapp.utils.PasswordUtils;
+import android.text.InputType;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.text.InputType;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.taskapp.databinding.ActivitySinginBinding;
+import com.example.taskapp.model.Member;
+import com.example.taskapp.utils.PasswordUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,9 +37,6 @@ import javax.mail.internet.MimeMessage;
 
 public class SignInActivity extends AppCompatActivity {
     private ActivitySinginBinding binding;
-    private EditText editKnoxId, editPassword;
-    private Button btnLogin;
-    private TextView txtChangePassword, txtForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,6 +200,8 @@ public class SignInActivity extends AppCompatActivity {
                                     if (member.isFirstLogin()) {
                                         promptChangePassword(userSnapshot.getKey(), member);
                                     } else {
+                                        binding.editKnoxId.setText("");
+                                        binding.editPassword.setText("");
                                         Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(SignInActivity.this, MainActivity.class));
                                     }

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <EditText
         android:id="@+id/editCategoryName"
-        android:hint="Category name"
-        android:inputType="text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Category name"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editCategoryDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description"
-        android:minLines="2"
-        android:inputType="textMultiLine"
         android:gravity="top"
-        android:imeOptions="actionNone" />
+        android:hint="Description"
+        android:imeOptions="actionNone"
+        android:inputType="textMultiLine"
+        android:minLines="2" />
 </LinearLayout>

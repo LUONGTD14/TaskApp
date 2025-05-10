@@ -1,24 +1,13 @@
 package com.example.taskapp;
 
 import android.os.Bundle;
-
-import com.example.taskapp.databinding.ActivitySinginBinding;
-import com.example.taskapp.model.Task;
-import com.google.android.material.snackbar.Snackbar;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.example.taskapp.databinding.ActivityViewTaskBinding;
+import com.example.taskapp.model.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +20,6 @@ import java.util.Map;
 
 public class ViewTaskActivity extends AppCompatActivity {
     private ActivityViewTaskBinding binding;
-
     private Map<String, String> categoryNameMap = new HashMap<>();
     private Map<String, String> memberNameMap = new HashMap<>();
 
@@ -52,24 +40,30 @@ public class ViewTaskActivity extends AppCompatActivity {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
 
         db.child("categories").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override public void onDataChange(@NonNull DataSnapshot snapshot) {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snap : snapshot.getChildren()) {
                     categoryNameMap.put(snap.getKey(), snap.child("name").getValue(String.class));
                 }
 
                 db.child("members").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot snap : snapshot.getChildren()) {
                             memberNameMap.put(snap.getKey(), snap.child("name").getValue(String.class));
                         }
                         showTask(task);
                     }
 
-                    @Override public void onCancelled(@NonNull DatabaseError error) {}
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
                 });
             }
 
-            @Override public void onCancelled(@NonNull DatabaseError error) {}
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
     }
 

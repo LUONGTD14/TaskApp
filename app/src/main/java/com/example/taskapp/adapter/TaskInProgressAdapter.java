@@ -24,6 +24,8 @@ import com.example.taskapp.ViewTaskActivity;
 import com.example.taskapp.enums.TaskStatus;
 import com.example.taskapp.model.Member;
 import com.example.taskapp.model.Task;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,9 +34,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
 
 public class TaskInProgressAdapter extends RecyclerView.Adapter<TaskInProgressAdapter.TaskViewHolder> {
     private Context context;
@@ -156,6 +155,7 @@ public class TaskInProgressAdapter extends RecyclerView.Adapter<TaskInProgressAd
     public int getItemCount() {
         return taskList.size();
     }
+
     private void showExtendDialog(Context context, Task task) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_extend_task, null);

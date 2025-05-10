@@ -5,7 +5,6 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -35,11 +34,6 @@ import java.util.UUID;
 public class AddTaskActivity extends AppCompatActivity {
 
     private ActivityAddTaskBinding binding;
-
-    private EditText editTaskName, editRequirement, editStartTime, editEndTime, editReminderTime;
-    private Spinner spinnerCategory, spinnerMember1, spinnerMember2, spinnerManager;
-    private Button btnSaveTask;
-
     private Map<String, String> categoryMap = new HashMap<>();
     private Map<String, String> memberMap = new HashMap<>();
     private SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yyyy", Locale.getDefault());

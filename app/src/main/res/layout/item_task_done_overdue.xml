@@ -3,19 +3,19 @@
     android:id="@+id/itemContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
     android:layout_margin="6dp"
     android:background="#F8F5F5"
-    android:elevation="4dp">
+    android:elevation="4dp"
+    android:orientation="vertical"
+    android:padding="12dp">
 
     <TextView
         android:id="@+id/textStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Trạng thái"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textStartEndTime"
